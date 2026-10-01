@@ -16,8 +16,24 @@ class App extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Sandwich Counter')),
           backgroundColor: Colors.orange,
-        body: const Center(
-          child: OrderItemDisplay(5, 'footlong'),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const OrderItemDisplay(5, 'footlong'),
+            Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () => print('Button Pressed'),
+                 child: const Text('Add')
+                 ),
+                const SizedBox(width: 16,),
+                ElevatedButton(
+                  onPressed: () => print('Remove button pressed'),
+                 child: const Text('Remove')
+                 ),
+              ],
+            )
+          ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: (){},
